@@ -13,7 +13,7 @@ mamba create \
     pycollada lxml xlutils olefile requests \
     blinker opencv qt.py nine docutils \
     pyjwt requests tzlocal \
-    --copy -c freecad -c conda-forge -y
+    --copy -c conda-forge -y
 
 
 mamba run -p ${conda_env} python ../scripts/get_freecad_version.py

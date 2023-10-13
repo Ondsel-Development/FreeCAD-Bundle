@@ -12,7 +12,6 @@ call mamba create ^
  blinker opencv qt.py nine docutils ^
  pyjwt requests tzlocal ^
  --copy ^
- -c freecad ^
  -c conda-forge ^
  -y
  
