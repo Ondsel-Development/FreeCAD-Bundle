@@ -1,7 +1,5 @@
 name: freecad_bundle
 on:
-  schedule:
-   - cron: "0 12 * * 0,4"
   push:
     branches:
       - "*"
@@ -18,14 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-        #python: [py38, py310]
         tag: ["0.21.1"]
-        docs: ["0"]
-        # exclude:
-        #   - os: macos-latest
-        #     python: py38
-        #   - os: ubuntu-latest
-        #     python: py38
           
 
     steps:
@@ -76,7 +67,6 @@ jobs:
         working-directory: conda/osx
         env:
             DEPLOY_RELEASE: ${{ matrix.tag }}
-            ADD_DOCS: ${{ matrix.docs }}
 
       - if: matrix.os == 'ubuntu-latest'
         name: create linux bundle
@@ -84,7 +74,6 @@ jobs:
         working-directory: conda/linux
         env:
             DEPLOY_RELEASE: ${{ matrix.tag }}
-            ADD_DOCS: ${{ matrix.docs }}
 
       - if: matrix.os == 'windows-latest'
         name: create windows bundle
@@ -93,7 +82,6 @@ jobs:
         working-directory: conda\win
         env:
             DEPLOY_RELEASE: ${{ matrix.tag }}
-            ADD_DOCS: ${{ matrix.docs }}
 
       - if: (matrix.os == 'macos-latest' && github.event_name != 'pull_request')
         name: delete old mac assets
