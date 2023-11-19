@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         tag: ["weekly-builds"]
-        branch: ["main"]
+        branch: ["asm_card9"]
 
     steps:
       - name: Run a multi-line script
