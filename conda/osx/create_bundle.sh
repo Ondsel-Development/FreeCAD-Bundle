@@ -12,6 +12,7 @@ mamba create \
     pyyaml jinja2 opencamlib ifcopenshell \
     pycollada lxml xlutils olefile requests \
     blinker opencv qt.py nine docutils \
+    pyjwt tzlocal \
     --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
 
 
@@ -21,6 +22,10 @@ read -r version_name < bundle_name.txt
 echo -e "\################"
 echo -e "version_name:  ${version_name}"
 echo -e "################"
+
+echo -e "\nInstall Ondsel-Lens addon"
+git clone https://github.com/Ondsel-Development/Ondsel-Lens.git ${conda_env}/Mod/Ondsel-Lens
+git -C ${conda_env}/Mod/Ondsel-Lens rev-parse HEAD
 
 mamba list -p ${conda_env} > APP/FreeCAD.app/Contents/packages.txt
 sed -i "" "1s/.*/\nLIST OF PACKAGES:/"  APP/FreeCAD.app/Contents/packages.txt

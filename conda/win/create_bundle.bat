@@ -10,6 +10,7 @@ call mamba create ^
  pyyaml opencamlib ifcopenshell ^
  pycollada lxml xlutils olefile requests ^
  blinker opencv qt.py nine docutils ^
+ pyjwt tzlocal ^
  --copy ^
  -c Ondsel/label/dev ^
  -c freecad/label/dev ^
@@ -24,6 +25,9 @@ echo **********************
 echo %freecad_version_name%
 echo **********************
 
+echo "Install Ondsel-Lens addon"
+git clone https://github.com/Ondsel-Development/Ondsel-Lens.git %conda_env%\Library\Mod\Ondsel-Lens
+git -C %conda_env%\Library\Mod\Ondsel-Lens rev-parse HEAD
 
 REM Copy Conda's Python and (U)CRT to FreeCAD/bin
 robocopy %conda_env%\DLLs %copy_dir%\bin\DLLs /S /MT:%NUMBER_OF_PROCESSORS% > nul

@@ -11,7 +11,8 @@ echo -e "\nCreate the environment"
 packages="freecad=*.pre occt vtk python=3.10 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
           xlutils olefile requests blinker opencv qt.py nine docutils \
-          opencamlib calculix ifcopenshell appimage-updater-bridge"
+          opencamlib calculix ifcopenshell appimage-updater-bridge \
+          pyjwt tzlocal " 
 #if [[ "$ARCH" = "x86_64" ]]; then
 #  packages=${packages}" ifcopenshell appimage-updater-bridge"
 #fi
@@ -28,6 +29,10 @@ echo -e "################"
 
 echo -e "\nInstall freecad.appimage_updater"
 mamba run -p ${conda_env} pip install https://github.com/looooo/freecad.appimage_updater/archive/master.zip
+
+echo -e "\nInstall Ondsel-Lens addon"
+git clone https://github.com/Ondsel-Development/Ondsel-Lens.git ${conda_env}/Mod/Ondsel-Lens
+git -C ${conda_env}/Mod/Ondsel-Lens rev-parse HEAD
 
 echo -e "\nUninstall some packages not needed"
 conda uninstall -p ${conda_env} libclang --force -y
