@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          git clone https://github.com/FreeCAD/FreeCAD
+          git clone https://github.com/Ondsel-Development/FreeCAD
           touch freecad_version.txt
           wget https://raw.githubusercontent.com/FreeCAD/FreeCAD-Bundle/${GITHUB_REF##*/}/make_version_file.py
           cd FreeCAD
@@ -34,7 +34,8 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_name: Ondsel-Development/FreeCAD
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: freecad*
           tag: ${{ matrix.tag }}
           overwrite: true

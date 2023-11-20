@@ -11,6 +11,7 @@ call mamba create ^
  pycollada lxml xlutils olefile requests ^
  blinker opencv qt.py nine docutils ^
  --copy ^
+ -c Ondsel/label/dev ^
  -c freecad/label/dev ^
  -c conda-forge ^
  -y
