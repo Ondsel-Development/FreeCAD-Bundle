@@ -95,7 +95,7 @@ fi
 echo -e "\nCreate the appimage"
 chmod a+x ./AppDir/AppRun
 ../../appimagetool-$(uname -m).AppImage \
-  -u "gh-releases-zsync|FreeCAD|FreeCAD-Appimage|$tag|FreeCAD*.AppImage.zsync" \
+  -u "gh-releases-zsync|Ondsel-Development|FreeCAD|$tag|Ondsel*.AppImage.zsync" \
   AppDir  ${version_name}.AppImage
 
 echo -e "\nCreate hash"
