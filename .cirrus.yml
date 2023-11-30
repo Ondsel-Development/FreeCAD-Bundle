@@ -1,5 +1,5 @@
 env:
-    DEPLOY_RELEASE: weekly-builds
+    DEPLOY_RELEASE: Assembly_Playground
     TARGET_REPO: Ondsel-Development/FreeCAD
 
 macos_task:

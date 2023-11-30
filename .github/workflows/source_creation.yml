@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ["weekly-builds"]
+        tag: ["Assembly_Playground"]
         branch: ["asm_card9"]
 
     steps:
