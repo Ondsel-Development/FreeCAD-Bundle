@@ -45,11 +45,11 @@ if "DEPLOY_RELEASE" in os.environ and os.environ["DEPLOY_RELEASE"] == "weekly-bu
     dev_version = "weekly-builds"
     revision_separator = "-"
 else:
-    revision_separator = ""
-    revision = ""
+    revision_separator = "."
+    #revision = ""
 
 
-bundle_name = f"Ondsel_Assembly_Playground_{dev_version}{revision_separator}{revision}-{date}-{package_manager}-{system}-{arch}-{python_version}"
+bundle_name = f"Ondsel_Assembly_Playground_{dev_version}{revision_separator}{revision}-{system}-{arch}"
 
 with open("bundle_name.txt", "w") as bundle_name_file:
     bundle_name_file.write(bundle_name)
