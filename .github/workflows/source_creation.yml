@@ -4,6 +4,9 @@ name: source_creation
 
 # Controls when the workflow will run
 on:
+  schedule:
+   - cron: "0 12 * * *"
+
   workflow_dispatch:
 
 jobs:
@@ -12,7 +15,7 @@ jobs:
     strategy:
       matrix:
         tag: ["Assembly_Playground"]
-        branch: ["asm_card9"]
+        branch: ["flavor"]
 
     steps:
       - name: Run a multi-line script
