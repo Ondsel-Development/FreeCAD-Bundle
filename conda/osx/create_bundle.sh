@@ -27,6 +27,10 @@ echo -e "\nInstall Ondsel-Lens addon"
 git clone https://github.com/Ondsel-Development/Ondsel-Lens.git ${conda_env}/Mod/Ondsel-Lens
 git -C ${conda_env}/Mod/Ondsel-Lens rev-parse HEAD
 
+echo -e "\nInstall OpenDark preference pack"
+git clone https://github.com/obelisk79/OpenDark ${conda_env}/share/Gui/PreferencePacks/OpenDark
+git -C ${conda_env}/share/Gui/PreferencePacks/OpenDark rev-parse HEAD
+
 mamba list -p ${conda_env} > APP/FreeCAD.app/Contents/packages.txt
 sed -i "" "1s/.*/\nLIST OF PACKAGES:/"  APP/FreeCAD.app/Contents/packages.txt
 
