@@ -58,6 +58,7 @@ robocopy %conda_env%\Library\bin *.dll %copy_dir%\bin /XF *.pdb /XF api*.* /MT:%
 REM Copy FreeCAD build
 robocopy %conda_env%\Library\bin FreeCAD* %copy_dir%\bin /XF *.pdb /MT:%NUMBER_OF_PROCESSORS% > nul
 robocopy %conda_env%\Library\bin %copy_dir%\bin\ branding.xml /MT:%NUMBER_OF_PROCESSORS% > nul
+robocopy %conda_env%\Library\share\Gui %copy_dir%\share\Gui /S /MT:%NUMBER_OF_PROCESSORS% > nul
 robocopy %conda_env%\Library\data %copy_dir%\data /XF *.txt /S /MT:%NUMBER_OF_PROCESSORS% > nul
 REM robocopy %conda_env%\Library\doc\ *.html %copy_dir%\doc MT:%NUMBER_OF_PROCESSORS% > nul
 
