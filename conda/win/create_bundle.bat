@@ -30,8 +30,8 @@ git clone https://github.com/Ondsel-Development/Ondsel-Lens.git %conda_env%\Libr
 git -C %conda_env%\Library\Mod\Ondsel-Lens rev-parse HEAD
 
 echo "Install OpenDark preference pack"
-git clone https://github.com/obelisk79/OpenDark %conda_env%\Library\share\Gui\PreferencePacks\OpenDark
-git -C %conda_env%\Library\share\Gui\PreferencePacks\OpenDark rev-parse HEAD
+git clone https://github.com/obelisk79/OpenDark %conda_env%\Library\data\Gui\PreferencePacks\OpenDark
+git -C %conda_env%\Library\data\Gui\PreferencePacks\OpenDark rev-parse HEAD
 
 REM Copy Conda's Python and (U)CRT to FreeCAD/bin
 robocopy %conda_env%\DLLs %copy_dir%\bin\DLLs /S /MT:%NUMBER_OF_PROCESSORS% > nul
