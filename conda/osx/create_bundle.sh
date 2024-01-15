@@ -23,13 +23,8 @@ echo -e "\################"
 echo -e "version_name:  ${version_name}"
 echo -e "################"
 
-echo -e "\nInstall Ondsel-Lens addon"
-git clone https://github.com/Ondsel-Development/Ondsel-Lens.git ${conda_env}/Mod/Ondsel-Lens
-git -C ${conda_env}/Mod/Ondsel-Lens rev-parse HEAD
-
-echo -e "\nInstall OpenDark preference pack"
-git clone https://github.com/obelisk79/OpenDark ${conda_env}/share/Gui/PreferencePacks/OpenDark
-git -C ${conda_env}/share/Gui/PreferencePacks/OpenDark rev-parse HEAD
+echo -e "\nInstall additional addons"
+mamba run -p ${conda_env} python ../scripts/install_addons.py ${conda_env}
 
 mamba list -p ${conda_env} > APP/Ondsel-ES.app/Contents/packages.txt
 sed -i "" "1s/.*/\nLIST OF PACKAGES:/"  APP/Ondsel-ES.app/Contents/packages.txt

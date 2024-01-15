@@ -30,13 +30,8 @@ echo -e "################"
 echo -e "\nInstall freecad.appimage_updater"
 mamba run -p ${conda_env} pip install https://github.com/looooo/freecad.appimage_updater/archive/master.zip
 
-echo -e "\nInstall Ondsel-Lens addon"
-git clone https://github.com/Ondsel-Development/Ondsel-Lens.git ${conda_env}/Mod/Ondsel-Lens
-git -C ${conda_env}/Mod/Ondsel-Lens rev-parse HEAD
-
-echo -e "\nInstall OpenDark preference pack"
-git clone https://github.com/obelisk79/OpenDark ${conda_env}/share/Gui/PreferencePacks/OpenDark
-git -C ${conda_env}/share/Gui/PreferencePacks/OpenDark rev-parse HEAD
+echo -e "\nInstall additional addons"
+mamba run -p ${conda_env} python ../scripts/install_addons.py ${conda_env}
 
 echo -e "\nUninstall some packages not needed"
 conda uninstall -p ${conda_env} libclang --force -y
