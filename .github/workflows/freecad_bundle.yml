@@ -23,7 +23,7 @@ jobs:
             asset_pattern: Ondsel_.*Windows-x86_64
           - os: macos-latest
             bundle_dir: conda/osx
-            asset_pattern: Ondsel_.*macOS-x86_64
+            asset_pattern: Ondsel_.*macOS.*x86_64
           - os: ubuntu-latest
             bundle_dir: conda/linux
             asset_pattern: Ondsel_.*Linux-x86_64

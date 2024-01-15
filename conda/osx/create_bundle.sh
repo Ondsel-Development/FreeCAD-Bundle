@@ -2,7 +2,7 @@
 
 
 export MAMBA_NO_BANNER=1
-conda_env="APP/FreeCAD.app/Contents/Resources"
+conda_env="APP/Ondsel-ES.app/Contents/Resources"
 
 
 mamba create \
@@ -31,8 +31,8 @@ echo -e "\nInstall OpenDark preference pack"
 git clone https://github.com/obelisk79/OpenDark ${conda_env}/share/Gui/PreferencePacks/OpenDark
 git -C ${conda_env}/share/Gui/PreferencePacks/OpenDark rev-parse HEAD
 
-mamba list -p ${conda_env} > APP/FreeCAD.app/Contents/packages.txt
-sed -i "" "1s/.*/\nLIST OF PACKAGES:/"  APP/FreeCAD.app/Contents/packages.txt
+mamba list -p ${conda_env} > APP/Ondsel-ES.app/Contents/packages.txt
+sed -i "" "1s/.*/\nLIST OF PACKAGES:/"  APP/Ondsel-ES.app/Contents/packages.txt
 
 # copy the QuickLook plugin into its final location
 mv ${conda_env}/Library ${conda_env}/../Library
@@ -63,7 +63,7 @@ find . -path "*/__pycache__/*" -delete
 find . -name "*.pyc" -type f -delete
 
 # qtwebengine fix
-mv ./APP/FreeCAD.app/Contents/Resources/resources ./APP/FreeCAD.app/Contents/Resources/Resources
+mv ./APP/Ondsel-ES.app/Contents/Resources/resources ./APP/Ondsel-ES.app/Contents/Resources/Resources
 
 # fix problematic rpaths and reexport_dylibs for signing
 # see https://github.com/FreeCAD/FreeCAD/issues/10144#issuecomment-1836686775

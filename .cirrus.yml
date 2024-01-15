@@ -12,7 +12,7 @@ macos_task:
 
     # Environment variables:
     env:
-      ASSET_PATTERN: Ondsel_.*macOS-arm64
+      ASSET_PATTERN: Ondsel_.*macOS.*arm64
 
     # Instructions:
     bundle_script: |
