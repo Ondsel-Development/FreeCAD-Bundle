@@ -1,5 +1,5 @@
 env:
-    DEPLOY_RELEASE: Assembly_Playground
+    DEPLOY_RELEASE: 2024.1.0
     TARGET_REPO: Ondsel-Development/FreeCAD
 
 macos_task:

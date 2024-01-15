@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-        tag: ["Assembly_Playground"]
+        tag: ["2024.1.0"]
         include:
           - os: windows-latest
             bundle_dir: conda/win
