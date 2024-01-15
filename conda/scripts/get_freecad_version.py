@@ -46,7 +46,7 @@ if system == "macOS":
     template = jinja2.Template(template_str)
     rendered_str = template.render(FREECAD_VERSION=dev_version, 
                                    APPLICATION_MENU_NAME="Ondsel ES {}".format(dev_version))
-    with open(os.path.join(osx_directory, "APP", "Ondsel-ES.app", "Contents", "Info.plist"), "w") as rendered_file:
+    with open(os.path.join(osx_directory, "APP", "Ondsel ES.app", "Contents", "Info.plist"), "w") as rendered_file:
         rendered_file.write(rendered_str)
 
 if "DEPLOY_RELEASE" in os.environ and os.environ["DEPLOY_RELEASE"] == "weekly-builds":
