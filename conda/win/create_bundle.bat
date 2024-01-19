@@ -12,6 +12,7 @@ call mamba create ^
  blinker opencv qt.py nine docutils ^
  pyjwt tzlocal ^
  --copy ^
+ -c Ondsel ^
  -c Ondsel/label/dev ^
  -c freecad/label/dev ^
  -c conda-forge ^

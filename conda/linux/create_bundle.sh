@@ -18,7 +18,12 @@ packages="freecad=2024.1.0 occt vtk python=3.10 blas=*=openblas numpy \
 #fi
 
 mamba create -p ${conda_env} ${packages} \
-  --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
+  --copy \
+  -c Ondsel \
+  -c Ondsel/label/dev \
+  -c freecad/label/dev \
+  -c conda-forge \
+  -y
 
 mamba run -p ${conda_env} python ../scripts/get_freecad_version.py
 read -r version_name < bundle_name.txt
