@@ -15,7 +15,6 @@ mamba create \
     pyjwt tzlocal \
     --copy \
     -c Ondsel \
-    -c Ondsel/label/dev \
     -c freecad/label/dev \
     -c conda-forge \
     -y

@@ -20,7 +20,6 @@ packages="freecad=2024.1.0 occt vtk python=3.10 blas=*=openblas numpy \
 mamba create -p ${conda_env} ${packages} \
   --copy \
   -c Ondsel \
-  -c Ondsel/label/dev \
   -c freecad/label/dev \
   -c conda-forge \
   -y
