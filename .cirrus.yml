@@ -1,5 +1,5 @@
 env:
-    DEPLOY_RELEASE: 2024.1.0
+    DEPLOY_RELEASE: weekly-builds
     TARGET_REPO: Ondsel-Development/FreeCAD
 
 macos_task:
