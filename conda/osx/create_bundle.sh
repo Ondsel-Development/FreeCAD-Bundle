@@ -6,7 +6,7 @@ conda_env="APP/Ondsel ES.app/Contents/Resources"
 
 
 mamba create \
-    -p ${conda_env} \
+    -p "${conda_env}" \
     freecad=*.pre occt vtk python=3.10 calculix blas=*=openblas \
     numpy matplotlib-base scipy sympy pandas six \
     pyyaml jinja2 opencamlib ifcopenshell lark \
