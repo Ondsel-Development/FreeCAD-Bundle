@@ -5,7 +5,7 @@ name: source_creation
 # Controls when the workflow will run
 on:
   schedule:
-   - cron: "0 12 * * *"
+   - cron: "0 20 * * 1"
 
   workflow_dispatch:
 
