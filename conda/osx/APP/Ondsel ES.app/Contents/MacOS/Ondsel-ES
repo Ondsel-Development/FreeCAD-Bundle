@@ -15,4 +15,4 @@ if [[ `sw_vers -productVersion` > 10.99 ]] ; then
   export QT_MAC_WANTS_LAYER=1
 fi
 
-"${PREFIX}/bin/freecad" $@
+"${PREFIX}/bin/ondsel-es" $@

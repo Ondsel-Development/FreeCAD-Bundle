@@ -37,7 +37,7 @@ export QTWEBENGINE_DISABLE_SANDBOX=1
 if [ ! -z "$1" ] && [ -e "$HERE/usr/bin/$1" ] ; then
     MAIN="$HERE/usr/bin/$1" ; shift
 else
-    MAIN="$HERE/usr/bin/freecad"
+    MAIN="$HERE/usr/bin/ondsel-es"
 fi
 
 "${MAIN}" "$@"

@@ -56,6 +56,7 @@ REM get all the dependency .dlls
 robocopy %conda_env%\Library\bin *.dll %copy_dir%\bin /XF *.pdb /XF api*.* /MT:%NUMBER_OF_PROCESSORS% > nul
 REM Copy FreeCAD build
 robocopy %conda_env%\Library\bin FreeCAD* %copy_dir%\bin /XF *.pdb /MT:%NUMBER_OF_PROCESSORS% > nul
+robocopy %conda_env%\Library\bin ondsel* %copy_dir%\bin /XF *.pdb /MT:%NUMBER_OF_PROCESSORS% > nul
 robocopy %conda_env%\Library\bin %copy_dir%\bin\ branding.xml /MT:%NUMBER_OF_PROCESSORS% > nul
 robocopy %conda_env%\Library\share\Gui %copy_dir%\share\Gui /S /MT:%NUMBER_OF_PROCESSORS% > nul
 robocopy %conda_env%\Library\data %copy_dir%\data /XF *.txt /S /MT:%NUMBER_OF_PROCESSORS% > nul
@@ -74,6 +75,6 @@ dir
 
 REM if errorlevel1 exit 1
 
-"%ProgramFiles%\7-Zip\7z.exe" a -t7z -mmt=%NUMBER_OF_PROCESSORS% %freecad_version_name%.7z %freecad_version_name%\ -bb
+"%ProgramFiles%\7-Zip\7z.exe" a -t7z -mx9 -mmt=%NUMBER_OF_PROCESSORS% %freecad_version_name%.7z %freecad_version_name%\ -bb
 certutil -hashfile "%freecad_version_name%.7z" SHA256 > "%freecad_version_name%.7z"-SHA256.txt
 echo  %date%-%time% >>"%freecad_version_name%.7z"-SHA256.txt

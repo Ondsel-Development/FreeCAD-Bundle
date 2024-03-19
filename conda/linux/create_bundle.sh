@@ -44,6 +44,8 @@ rm -rf ${conda_env}/include
 find ${conda_env} -name \*.a -delete
 mv ${conda_env}/bin ${conda_env}/bin_tmp
 mkdir ${conda_env}/bin
+cp ${conda_env}/bin_tmp/ondsel-es ${conda_env}/bin/
+cp ${conda_env}/bin_tmp/ondsel-escmd ${conda_env}/bin/
 cp ${conda_env}/bin_tmp/freecad ${conda_env}/bin/
 cp ${conda_env}/bin_tmp/freecadcmd ${conda_env}/bin/
 cp ${conda_env}/bin_tmp/ccx ${conda_env}/bin/
