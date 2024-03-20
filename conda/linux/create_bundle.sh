@@ -95,6 +95,9 @@ else
 fi
 
 echo -e "\nCreate the appimage"
+if [ "$ARCH" = "aarch64" ]; then
+  export ARCH=arm_aarch64
+fi
 chmod a+x ./AppDir/AppRun
 ../../appimagetool-$(uname -m).AppImage \
   -u "gh-releases-zsync|Ondsel-Development|FreeCAD|$tag|Ondsel*$ARCH*.AppImage.zsync" \
