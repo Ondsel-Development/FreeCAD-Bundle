@@ -58,6 +58,10 @@ cp ${conda_env}/bin_tmp/branding.xml ${conda_env}/bin/
 sed -i '1s|.*|#!/usr/bin/env python|' ${conda_env}/bin/pip
 rm -rf ${conda_env}/bin_tmp
 
+# delete custom freecad logo from opentheme
+rm ${conda_env}/share/Gui/PreferencePacks/OpenTheme/OpenLight/images_dark-light/FreecadLogo.png
+rm ${conda_env}/share/Gui/PreferencePacks/OpenTheme/OpenLight/images_dark-light/FreecadLogo.svg
+
 echo -e "\nCopy qt.conf"
 cp qt.conf ${conda_env}/bin/
 cp qt.conf ${conda_env}/libexec/
