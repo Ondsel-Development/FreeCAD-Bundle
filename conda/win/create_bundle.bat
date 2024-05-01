@@ -66,6 +66,10 @@ REM Apply Patches
 rename %copy_dir%\bin\Lib\ssl.py ssl-orig.py
 copy ssl-patch.py %copy_dir%\bin\Lib\ssl.py
 
+REM delete custom freecad logo from opentheme
+del %copy_dir%\data\Gui\PreferencePacks\OpenTheme\OpenLight\images_dark-light\FreecadLogo.png
+del %copy_dir%\data\Gui\PreferencePacks\OpenTheme\OpenLight\images_dark-light\FreecadLogo.svg
+
 cd %copy_dir%\..
 ren %copy_dir% %freecad_version_name%
 dir
