@@ -55,6 +55,8 @@ rm -rf "${conda_env}"/bin_tmp
 for file in $(find "${conda_env}"/share/Gui/PreferencePacks/OpenTheme/ -type f -name "*.qss" -o -name "*.scss"); do
   sed -i '/background-image: url(qss:images_dark-light\/FreecadLogo\.png);/d' "$file"
 done
+# move opentheme QtNormalizer module so it gets properly loaded
+mv "${conda_env}/share/Gui/PreferencePacks/OpenTheme/QtNormalizer" "${conda_env}/Mod/QtNormalizer"
 
 #copy qt.conf
 cp qt.conf "${conda_env}"/bin/

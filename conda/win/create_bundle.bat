@@ -70,6 +70,8 @@ REM delete custom freecad logo from opentheme
 for /r "%copy_dir%\data\Gui\PreferencePacks\OpenTheme" %%F in (*.qss *.scss) do (
    findstr /v /c:"background-image: url(qss:images_dark-light/FreecadLogo.png);" "%%F" > "%%F.tmp" & move /y "%%F.tmp" "%%F"
 )
+REM move opentheme QtNormalizer module so it gets properly loaded
+move "%copy_dir%\data\Gui\PreferencePacks\OpenTheme\QtNormalizer" "%copy_dir%\Mod\"
 
 cd %copy_dir%\..
 ren %copy_dir% %freecad_version_name%
