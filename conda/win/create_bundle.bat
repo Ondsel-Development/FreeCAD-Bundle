@@ -5,17 +5,16 @@ mkdir %copy_dir%
 
 call mamba create ^
  -p %conda_env% ^
- ondsel-es=*.pre python=3.11 occt vtk calculix gmsh ^
+ ondsel-es=2024.2.0 python=3.11 occt vtk calculix gmsh ^
  numpy matplotlib-base scipy sympy pandas six ^
  pyyaml opencamlib ifcopenshell lark ^
  pycollada lxml xlutils olefile requests ^
  blinker opencv nine docutils ^
  pyjwt tzlocal ^
- --copy ^
- -c Ondsel/label/dev ^
+ -c Ondsel ^
  -c freecad/label/dev ^
  -c conda-forge ^
- -y
+ --copy -y 
  
  
 %conda_env%\python ..\scripts\get_freecad_version.py

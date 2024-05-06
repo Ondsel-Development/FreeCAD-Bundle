@@ -13,7 +13,7 @@ linux_task:
     env:
       DEBIAN_FRONTEND: noninteractive
       ASSET_PATTERN: Ondsel_.*Linux-aarch64
-      DEPLOY_RELEASE: weekly-builds
+      DEPLOY_RELEASE: 2024.2.0
       TARGET_REPO: Ondsel-Development/FreeCAD
 
     # Instructions:

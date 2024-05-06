@@ -8,7 +8,7 @@ fi
 conda_env="AppDir/usr"
 echo -e "\nCreate the environment"
 
-packages="ondsel-es=*.pre occt vtk python=3.11 blas=*=openblas numpy \
+packages="ondsel-es=2024.2.0 occt vtk python=3.11 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
           xlutils olefile requests blinker opencv nine docutils \
           opencamlib calculix ifcopenshell lark appimage-updater-bridge \
@@ -18,7 +18,10 @@ packages="ondsel-es=*.pre occt vtk python=3.11 blas=*=openblas numpy \
 #fi
 
 mamba create -p ${conda_env} ${packages} \
-  --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
+  -c Ondsel \
+  -c freecad/label/dev \
+  -c conda-forge \
+  --copy -y
 
 mamba run -p ${conda_env} python ../scripts/get_freecad_version.py
 read -r version_name < bundle_name.txt

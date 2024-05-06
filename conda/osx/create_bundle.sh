@@ -7,13 +7,16 @@ conda_env="APP/Ondsel ES.app/Contents/Resources"
 
 mamba create \
     -p "${conda_env}" \
-    ondsel-es=*.pre occt vtk python=3.11 calculix blas=*=openblas \
+    ondsel-es=2024.2.0 occt vtk python=3.11 calculix blas=*=openblas \
     numpy matplotlib-base scipy sympy pandas six \
     pyyaml jinja2 opencamlib ifcopenshell lark \
     pycollada lxml xlutils olefile requests \
     blinker opencv nine docutils \
     pyjwt tzlocal \
-    --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
+    -c Ondsel \
+    -c freecad/label/dev \
+    -c conda-forge \
+    --copy -y
 
 
 mamba run -p "${conda_env}" python ../scripts/get_freecad_version.py

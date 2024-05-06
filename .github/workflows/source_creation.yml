@@ -4,8 +4,8 @@ name: source_creation
 
 # Controls when the workflow will run
 on:
-  schedule:
-   - cron: "0 20 * * 1"
+#  schedule:
+#   - cron: "0 20 * * 1"
 
   workflow_dispatch:
 
@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ["weekly-builds"]
-        branch: ["flavor"]
+        tag: ["2024.2.0"]
+        branch: ["2024.2.0"]
 
     steps:
       - name: Run a multi-line script
