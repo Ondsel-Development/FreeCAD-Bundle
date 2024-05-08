@@ -62,9 +62,8 @@ sed -i '1s|.*|#!/usr/bin/env python|' ${conda_env}/bin/pip
 rm -rf ${conda_env}/bin_tmp
 
 # remove custom freecad logo from opentheme
-for file in $(find "${conda_env}"/share/Gui/PreferencePacks/OpenTheme/ -type f -name "*.qss" -o -name "*.scss"); do
-  sed -i '/background-image: url(qss:images_dark-light\/FreecadLogo\.png);/d' "$file"
-done
+find "${conda_env}/share/Gui/PreferencePacks/OpenTheme/" -type f \( -name "*.qss" -o -name "*.scss" \) \
+   -exec sed -i "/background-image: url(qss:images_dark-light\/FreecadLogo\.png);/d" {} +
 # move opentheme QtNormalizer module so it gets properly loaded
 mv "${conda_env}/share/Gui/PreferencePacks/OpenTheme/QtNormalizer" "${conda_env}/Mod/QtNormalizer"
 
