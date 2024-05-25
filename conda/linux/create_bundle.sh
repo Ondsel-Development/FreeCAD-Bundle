@@ -31,7 +31,7 @@ echo -e "version_name:  ${version_name}"
 echo -e "################"
 
 echo -e "\nInstall freecad.appimage_updater"
-mamba run -p ${conda_env} pip install https://github.com/looooo/freecad.appimage_updater/archive/master.zip
+mamba run -p ${conda_env} pip install https://github.com/Ondsel-Development/freecad.appimage_updater/archive/main.zip
 
 echo -e "\nInstall additional addons"
 mamba run -p ${conda_env} python ../scripts/install_addons.py ${conda_env}
