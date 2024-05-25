@@ -7,7 +7,7 @@ conda_env="APP/Ondsel ES.app/Contents/Resources"
 
 mamba create \
     -p "${conda_env}" \
-    ondsel-es=2024.2.0 occt vtk python=3.11 calculix blas=*=openblas \
+    ondsel-es=2024.2.1 occt vtk python=3.11 calculix blas=*=openblas \
     numpy matplotlib-base scipy sympy pandas six \
     pyyaml jinja2 opencamlib ifcopenshell lark \
     pycollada lxml xlutils olefile requests \
