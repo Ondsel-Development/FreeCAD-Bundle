@@ -5,7 +5,7 @@ mkdir %copy_dir%
 
 call mamba create ^
  -p %conda_env% ^
- ondsel-es=2024.2.1 python=3.11 occt vtk calculix gmsh ^
+ ondsel-es=2024.2.2 python=3.11 occt vtk calculix gmsh ^
  numpy matplotlib-base scipy sympy pandas six ^
  pyyaml opencamlib ifcopenshell lark ^
  pycollada lxml xlutils olefile requests ^

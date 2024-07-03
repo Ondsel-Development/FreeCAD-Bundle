@@ -8,7 +8,7 @@ fi
 conda_env="AppDir/usr"
 echo -e "\nCreate the environment"
 
-packages="ondsel-es=2024.2.1 occt vtk python=3.11 blas=*=openblas numpy \
+packages="ondsel-es=2024.2.2 occt vtk python=3.11 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
           xlutils olefile requests blinker opencv nine docutils \
           opencamlib calculix ifcopenshell lark appimage-updater-bridge \
