@@ -11,7 +11,7 @@ mamba create \
     numpy matplotlib-base scipy sympy pandas six \
     pyyaml jinja2 opencamlib ifcopenshell lark \
     pycollada lxml xlutils olefile requests \
-    blinker opencv nine docutils \
+    blinker nine docutils \
     pyjwt tzlocal \
     -c Ondsel \
     -c freecad/label/dev \
