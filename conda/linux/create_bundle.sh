@@ -10,7 +10,7 @@ echo -e "\nCreate the environment"
 
 packages="ondsel-es=2024.2.2 occt vtk python=3.11 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
-          xlutils olefile requests blinker opencv=*=py* nine docutils \
+          xlutils olefile requests blinker opencv=*=headless* nine docutils \
           opencamlib calculix ifcopenshell lark appimage-updater-bridge \
           pyjwt tzlocal " 
 #if [[ "$ARCH" = "x86_64" ]]; then
