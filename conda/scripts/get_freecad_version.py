@@ -20,8 +20,10 @@ if arch == "AMD64":
 if system == "macOS":
     if arch == "x86_64":
         arch = "intel-x86_64"
+        mac_arch_str = "i386"
     elif arch == "arm64":
         arch =  "apple-silicon-arm64"
+        mac_arch_str = "arm64"
 
 if "ARCH" in os.environ:
     if os.environ["ARCH"] != "":
@@ -45,7 +47,8 @@ if system == "macOS":
         template_str = template_file.read()
     template = jinja2.Template(template_str)
     rendered_str = template.render(FREECAD_VERSION=dev_version, 
-                                   APPLICATION_MENU_NAME="Ondsel ES {}".format(dev_version))
+                                   APPLICATION_MENU_NAME="Ondsel ES {}".format(dev_version),
+                                   ARCHITECTURE=mac_arch_str )
     with open(os.path.join(osx_directory, "APP", "Ondsel ES.app", "Contents", "Info.plist"), "w") as rendered_file:
         rendered_file.write(rendered_str)
 

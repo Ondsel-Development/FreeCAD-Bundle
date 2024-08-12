@@ -95,5 +95,9 @@
 			</dict>
 		</dict>
 	</array>
+    <key>LSArchitecturePriority</key>
+    <array>
+        <string>{{ ARCHITECTURE }}</string>
+    </array>
 </dict>
 </plist>
