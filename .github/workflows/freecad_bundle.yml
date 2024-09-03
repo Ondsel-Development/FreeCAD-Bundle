@@ -1,7 +1,7 @@
 name: freecad_bundle
 on:
   schedule:
-   - cron: "0 1 * * 2"
+   - cron: "0 1 * * 3"
   push:
     branches:
       - "*"
