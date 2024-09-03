@@ -14,7 +14,7 @@ linux_task:
       DEBIAN_FRONTEND: noninteractive
       ASSET_PATTERN: Ondsel_.*Linux-aarch64
       DEPLOY_RELEASE: weekly-builds
-      TARGET_REPO: Ondsel-Development/FreeCAD
+      TARGET_REPO: Ondsel-Development/assets
 
     # Instructions:
     bundle_script: |

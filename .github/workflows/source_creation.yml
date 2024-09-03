@@ -42,7 +42,7 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_name: Ondsel-Development/FreeCAD
+          repo_name: Ondsel-Development/assets
           repo_token: ${{ secrets.GH_TOKEN }}
           file: freecad*
           tag: ${{ matrix.tag }}

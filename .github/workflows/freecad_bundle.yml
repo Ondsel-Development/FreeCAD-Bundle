@@ -88,7 +88,7 @@ jobs:
         name: Upload binaries to release and remove old ones
         working-directory: ${{ matrix.bundle_dir }}
         env:
-          TARGET_REPO: Ondsel-Development/FreeCAD
+          TARGET_REPO: Ondsel-Development/assets
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           DEPLOY_RELEASE: ${{ matrix.tag }}
           ASSET_PATTERN: ${{ matrix.asset_pattern }}
