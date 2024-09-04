@@ -11,11 +11,8 @@ echo -e "\nCreate the environment"
 packages="ondsel-es=*.pre occt vtk python=3.11 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
           xlutils olefile requests blinker opencv nine docutils \
-          opencamlib calculix ifcopenshell lark appimage-updater-bridge \
-          pyjwt tzlocal " 
-#if [[ "$ARCH" = "x86_64" ]]; then
-#  packages=${packages}" ifcopenshell appimage-updater-bridge"
-#fi
+          opencamlib calculix ifcopenshell lark \
+          pyjwt tzlocal "
 
 mamba create -p ${conda_env} ${packages} \
   --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
@@ -103,7 +100,6 @@ if [ "$ARCH" = "aarch64" ]; then
 fi
 chmod a+x ./AppDir/AppRun
 ../../appimagetool-$(uname -m).AppImage \
-  -u "gh-releases-zsync|Ondsel-Development|FreeCAD|$tag|Ondsel*$ARCH*.AppImage.zsync" \
   AppDir  ${version_name}.AppImage
 
 echo -e "\nCreate hash"
