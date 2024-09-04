@@ -25,9 +25,9 @@ linux_task:
       curl -LO https://raw.githubusercontent.com/AppImage/AppImages/master/pkg2appimage;
       curl -LO https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$(uname -m).AppImage;
       chmod a+x appimagetool-$(uname -m).AppImage;
-      curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-$(uname)-$(uname -m).sh"
+      curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
       export HOME='/home/cirrus-ci-build'
-      bash Miniforge-$(uname)-$(uname -m).sh -b -p "${HOME}/miniforge"
+      bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOME}/miniforge"
       source "${HOME}/miniforge/etc/profile.d/conda.sh"
       conda activate
       cd conda/linux
