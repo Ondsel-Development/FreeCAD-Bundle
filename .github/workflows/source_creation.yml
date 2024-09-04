@@ -43,7 +43,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_name: Ondsel-Development/FreeCAD
-          repo_token: ${{ secrets.GH_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN_FC }}
           file: freecad*
           tag: ${{ matrix.tag }}
           overwrite: true
