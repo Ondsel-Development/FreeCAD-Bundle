@@ -24,7 +24,7 @@ jobs:
         gh release download --repo Ondsel-Development/assets ${{ github.event.inputs.tag_name }} --dir ./downloaded-assets
         ls -l ./downloaded-assets
 
-    - name: Upload assets to S3
+    - name: Upload assets to S3 and publish on Lens
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -33,9 +33,14 @@ jobs:
       run: |
         aws configure set default.s3.multipart_threshold 64MB
         aws configure set default.s3.multipart_chunksize 16MB
+        LENS_TOKEN=$(curl -s -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' --data \
+          '{"strategy":"local","email":"${{ secrets.LENS_USER }}","password":"${{ secrets.LENS_PASSWORD }}","rememberMe":false}' \
+          https://lens-api.ondsel.com/authentication | jq -r '.accessToken')
         cd downloaded-assets
         for file in *; do
           uploadName=$(uuidgen).OES
-          echo "${file} will be uploaded as ${uploadName}"
-          aws s3 cp $file s3://ondsel-client-models-prod/$uploadName
+          echo "\n${file} will be uploaded as ${uploadName}"
+          aws s3 cp ${file} s3://ondsel-client-models-prod/${uploadName}
+          asset_json=$(../make_asset_json.py ${file} ${uploadName} ${{ github.event.inputs.tag_name }})
+          curl -d "${asset_json}" -H "Content-Type: application/json" -H "Authorization: Bearer ${LENS_TOKEN}" -X POST https://lens-api.ondsel.com/publisher
         done
