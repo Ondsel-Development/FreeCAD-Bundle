@@ -1,0 +1,41 @@
+name: publish to Lens
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name of the release'
+        required: false
+        default: 'weekly-builds'
+
+jobs:
+  publish_to_lens:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: download assets from release
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        mkdir -p downloaded-assets
+        gh release download --repo Ondsel-Development/assets ${{ github.event.inputs.tag_name }} --dir ./downloaded-assets
+        ls -l ./downloaded-assets
+
+    - name: Upload assets to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: us-east-1
+        AWS_DEFAULT_OUTPUT: json
+      run: |
+        aws configure set default.s3.multipart_threshold 64MB
+        aws configure set default.s3.multipart_chunksize 16MB
+        cd downloaded-assets
+        for file in *; do
+          uploadName=$(uuidgen).OES
+          echo "${file} will be uploaded as ${uploadName}"
+          aws s3 cp $file s3://ondsel-client-models-prod/$uploadName
+        done
