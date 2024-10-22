@@ -10,7 +10,7 @@ call mamba create ^
  pyyaml opencamlib ifcopenshell lark ^
  pycollada lxml xlutils olefile requests ^
  blinker opencv nine docutils ^
- pyjwt tzlocal ^
+ pyjwt tzlocal git ^
  --copy ^
  -c Ondsel/label/dev ^
  -c freecad/label/dev ^

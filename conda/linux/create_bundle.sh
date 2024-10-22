@@ -12,7 +12,7 @@ packages="ondsel-es=*.pre occt vtk python=3.11 blas=*=openblas numpy \
           matplotlib-base scipy sympy pandas six pyyaml pycollada lxml \
           xlutils olefile requests blinker opencv nine docutils \
           opencamlib calculix ifcopenshell lark \
-          pyjwt tzlocal "
+          pyjwt tzlocal git"
 
 mamba create -p ${conda_env} ${packages} \
   --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y

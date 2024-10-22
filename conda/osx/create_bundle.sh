@@ -12,7 +12,7 @@ mamba create \
     pyyaml jinja2 opencamlib ifcopenshell lark \
     pycollada lxml xlutils olefile requests \
     blinker opencv nine docutils \
-    pyjwt tzlocal \
+    pyjwt tzlocal git \
     --copy -c Ondsel/label/dev -c freecad/label/dev -c conda-forge -y
 
 
