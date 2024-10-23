@@ -1,6 +1,7 @@
 linux_task:
     # Basic metadata:
     name: appimage-bundle
+    trigger_type: manual
 
     # The build machine:
     compute_engine_instance:
